@@ -1,0 +1,123 @@
+.navbar {
+  max-width: 90%;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px; /* Reduced for small screens */
+  margin: 10px;
+  z-index: 1000;
+}
+.logo {
+  width: 109px;
+  height: 60px;
+  margin-top: 20px;
+}
+.nav-logo {
+  width: 100%;
+  max-height: 100%; /* Increased width for better visibility on small screens */
+}
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 30px; /* Reduced gap for small screens */
+  font-size: 16px; /* Decreased font size */
+}
+.nav-menu li {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  cursor: pointer;
+}
+
+.nav-connect {
+  margin-top: 10px;
+  padding: 10px 20px; /* Reduced padding */
+  border-radius: 30px; /* Reduced border-radius */
+  background: linear-gradient(167deg, #da7c25 0.36%, #8923e1);
+  font-size: 18px; /* Smaller font */
+  cursor: pointer;
+  transition: 0.5s;
+  display: none;
+}
+
+.nav-connect:hover {
+  transform: scale(1.05);
+}
+
+.anchor-link {
+  text-decoration: none;
+  color: white;
+}
+.nav-mob-close {
+  display: none;
+}
+
+.nav-mob-open {
+  display: none;
+}
+
+/* Media query for 768px and below */
+@media (max-width: 768px) {
+  .nav-connect {
+    display: none;
+  }
+  .nav-mob-open {
+    display: block;
+  }
+  .nav-mob-close {
+    display: block;
+    position: relative;
+    top: 30px;
+    left: 240px;
+    width: 30px;
+  }
+  .nav-menu {
+    position: fixed;
+    flex-direction: column;
+    align-items: start;
+    top: 0;
+    gap: 30px;
+    background-color: #1f0016;
+    width: 300px;
+    height: 100%;
+    z-index: 2;
+    transition: right 0.5s;
+    right: -300px; /* Adjusted to match smaller width */
+  }
+  .nav-menu li {
+    font-size: 24px; /* Smaller font size */
+    padding-left: 50px; /* Reduced padding */
+    flex-direction: row;
+    gap: 15px; /* Reduced gap */
+  }
+}
+
+/* New Media query for 440px and below */
+@media (max-width: 440px) {
+  .navbar {
+    gap: 5px;
+    margin: 5px auto;
+  }
+  .nav-logo {
+    width: 30%; /* Increased to take up more space */
+  }
+  .nav-menu {
+    gap: 20px;
+    width: 250px; /* Smaller fixed width for menu */
+    right: -250px; /* Align with smaller width */
+  }
+  .nav-menu li {
+    font-size: 20px; /* Smaller font size for tiny screens */
+    padding-left: 30px; /* Adjusted padding */
+  }
+  .nav-connect {
+    font-size: 16px; /* Smaller font for button */
+    padding: 10px 15px; /* Reduced padding */
+  }
+  .nav-mob-close {
+    left: 200px; /* Adjusted position for small screens */
+  }
+}
